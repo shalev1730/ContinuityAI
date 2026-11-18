@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="220575da83e85310e1615529feaad342" label="Employee Profile" max_length="40" name="x_2316178_contin_0_employee_profile" type="collection">
+        <element label="Employee" mandatory="true" max_length="32" name="employee" reference="sys_user" type="reference"/>
+        <element label="Available" max_length="40" name="available" type="boolean"/>
+        <element label="Team" max_length="100" name="team" type="string"/>
+        <element label="Active work item count" max_length="40" name="active_work_item_count" type="integer"/>
+        <element label="Skills" max_length="500" name="skills" type="string"/>
+        <element label="Current load pct" max_length="40" name="current_load_pct" type="integer"/>
+        <element label="Verified on" max_length="40" name="verified_on" type="glide_date"/>
+        <element label="Max active work items" max_length="40" name="max_active_work_items" type="integer"/>
+        <index name="index" unique="true">
+            <element name="employee"/>
+        </index>
+    </element>
+</database>

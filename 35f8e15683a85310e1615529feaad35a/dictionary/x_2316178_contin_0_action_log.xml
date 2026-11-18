@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" audit="true" db_object_id="04f2d75683a49310e1615529feaad3d5" label="Action Log" max_length="40" name="x_2316178_contin_0_action_log" type="collection">
+        <element label="After value" max_length="255" name="after_value" type="string"/>
+        <element label="Idempotency key" max_length="100" name="idempotency_key" type="string"/>
+        <element choice="1" label="Result" max_length="40" name="result" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Skipped" sequence="300" value="skipped"/>
+                <element inactive_on_update="false" label="In progress" sequence="100" value="in_progress"/>
+                <element inactive_on_update="false" label="Manual review" sequence="500" value="manual_review"/>
+                <element inactive_on_update="false" label="Failed" sequence="400" value="failed"/>
+                <element inactive_on_update="false" label="Success" sequence="200" value="success"/>
+            </choice>
+        </element>
+        <element label="Before value" max_length="255" name="before_value" type="string"/>
+        <element label="Executed at" max_length="40" name="executed_at" type="glide_date_time"/>
+        <element choice="1" label="Action type" max_length="40" name="action_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Reassign" sequence="100" value="reassign"/>
+                <element inactive_on_update="false" label="Escalate" sequence="200" value="escalate"/>
+            </choice>
+        </element>
+        <element label="Absence case" max_length="32" name="absence_case" reference="x_2316178_contin_0_absence_case" type="reference"/>
+        <element label="Error message" max_length="1000" name="error_message" type="string"/>
+        <element label="Executed by" max_length="32" name="executed_by" reference="sys_user" type="reference"/>
+        <element label="Target sys id" max_length="32" name="target_sys_id" type="string"/>
+        <element label="Target table" max_length="80" name="target_table" type="string"/>
+        <element label="Continuity item" max_length="32" name="continuity_item" reference="x_2316178_contin_0_continuity_item" type="reference"/>
+        <index name="index">
+            <element name="absence_case"/>
+        </index>
+        <index name="index2">
+            <element name="continuity_item"/>
+        </index>
+        <index name="index3">
+            <element name="executed_by"/>
+        </index>
+    </element>
+</database>
