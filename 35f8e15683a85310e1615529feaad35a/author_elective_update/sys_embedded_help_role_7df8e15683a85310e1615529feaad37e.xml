@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="DELETE">
+        <order>1000</order>
+        <role/>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-16 13:19:46</sys_created_on>
+        <sys_id>7df8e15683a85310e1615529feaad37e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>39f8e15683a85310e1615529feaad37c</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_update_name>sys_embedded_help_role_7df8e15683a85310e1615529feaad37e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-16 13:19:46</sys_updated_on>
+    </sys_embedded_help_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</application>
+        <file_path/>
+        <instance_id>c785520eebec9310e9bbfddacad0cdbd</instance_id>
+        <instance_name>dev483875</instance_name>
+        <merge_base/>
+        <name>sys_embedded_help_role_7df8e15683a85310e1615529feaad37e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role"><sys_embedded_help_role action="INSERT_OR_UPDATE"><order>1000</order><role/><sys_class_name>sys_embedded_help_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-11-16 13:19:46</sys_created_on><sys_id>7df8e15683a85310e1615529feaad37e</sys_id><sys_mod_count>0</sys_mod_count><sys_name>39f8e15683a85310e1615529feaad37c</sys_name><sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package><sys_policy/><sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope><sys_update_name>sys_embedded_help_role_7df8e15683a85310e1615529feaad37e</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-11-16 13:19:46</sys_updated_on></sys_embedded_help_role></record_update>]]></payload>
+        <payload_hash>289980468</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source/>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>ClaudeUser</sys_created_by>
+        <sys_created_on>2026-11-19 11:10:33</sys_created_on>
+        <sys_id>de28685b83241310e1615529feaad33c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1f3804a170000001</sys_recorded_at>
+        <sys_updated_by>ClaudeUser</sys_updated_by>
+        <sys_updated_on>2026-11-19 11:10:33</sys_updated_on>
+        <type>Embedded Help Role Priority</type>
+        <update_guid>9e28685b5724131085787018c059ba3c</update_guid>
+        <update_guid_history>9e28685b5724131085787018c059ba3c:289980468</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-19 11:11:20</sys_created_on>
+        <sys_db_object display_value="" name="sys_embedded_help_role">sys_embedded_help_role</sys_db_object>
+        <sys_id>34b90059a3e84fa48b3870b2897fafe9</sys_id>
+        <sys_metadata>7df8e15683a85310e1615529feaad37e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>39f8e15683a85310e1615529feaad37c</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_scope_delete display_value="">2858c0ddb89d48ba80453cd2bdcd80c9</sys_scope_delete>
+        <sys_update_name>sys_embedded_help_role_7df8e15683a85310e1615529feaad37e</sys_update_name>
+        <sys_update_version display_value="sys_embedded_help_role_7df8e15683a85310e1615529feaad37e">de28685b83241310e1615529feaad33c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-19 11:11:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

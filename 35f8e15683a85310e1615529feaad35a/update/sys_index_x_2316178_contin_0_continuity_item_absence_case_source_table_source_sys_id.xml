@@ -2,9 +2,9 @@
     <sys_index action="INSERT_OR_UPDATE">
         <access_method>btree</access_method>
         <col_name_string>absence_case,source_table,source_sys_id</col_name_string>
-        <index_col_name>9502cb5683249310e1615529feaad313,ca72cb9683249310e1615529feaad32a,85824f9683249310e1615529feaad38f<sys_dictionary element="absence_case" name="x_2316178_contin_0_continuity_item">9502cb5683249310e1615529feaad313</sys_dictionary>
-            <sys_dictionary element="source_table" name="x_2316178_contin_0_continuity_item">ca72cb9683249310e1615529feaad32a</sys_dictionary>
-            <sys_dictionary element="source_sys_id" name="x_2316178_contin_0_continuity_item">85824f9683249310e1615529feaad38f</sys_dictionary>
+        <index_col_name>9502cb5683249310e1615529feaad313,ca72cb9683249310e1615529feaad32a,85824f9683249310e1615529feaad38f<sys_dictionary>9502cb5683249310e1615529feaad313</sys_dictionary>
+            <sys_dictionary>ca72cb9683249310e1615529feaad32a</sys_dictionary>
+            <sys_dictionary>85824f9683249310e1615529feaad38f</sys_dictionary>
         </index_col_name>
         <logical_table_name>x_2316178_contin_0_continuity_item</logical_table_name>
         <sys_class_name>sys_index</sys_class_name>
@@ -19,7 +19,7 @@
         <sys_update_name>sys_index_x_2316178_contin_0_continuity_item_absence_case_source_table_source_sys_id</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2026-11-16 20:02:38</sys_updated_on>
-        <table display_value="Continuity Item" name="x_2316178_contin_0_continuity_item">f099ca5283ac5310e1615529feaad355</table>
+        <table/>
         <unique_index>true</unique_index>
     </sys_index>
 </record_update>

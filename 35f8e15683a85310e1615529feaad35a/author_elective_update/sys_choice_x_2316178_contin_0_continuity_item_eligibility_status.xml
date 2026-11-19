@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_choice action="INSERT_OR_UPDATE" field="eligibility_status" table="x_2316178_contin_0_continuity_item" version="3">
-        <sys_choice_set action="INSERT_OR_UPDATE">
+    <sys_choice action="DELETE" field="eligibility_status" table="x_2316178_contin_0_continuity_item" version="3">
+        <sys_choice_set action="DELETE">
             <element>eligibility_status</element>
             <name>x_2316178_contin_0_continuity_item</name>
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2026-11-16 19:58:50</sys_created_on>
+            <sys_id>ef4447da83249310e1615529feaad3aa</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>eligibility_status</sys_name>
             <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
@@ -15,81 +16,51 @@
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2026-11-16 19:58:50</sys_updated_on>
         </sys_choice_set>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>eligibility_status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Eligible</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>100</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:58:50</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:58:50</sys_updated_on>
-            <value>eligible</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>eligibility_status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>No safe replacement</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>200</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:58:55</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:58:55</sys_updated_on>
-            <value>no_safe_replacement</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>eligibility_status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Manual review</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>300</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:59:00</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:59:00</sys_updated_on>
-            <value>manual_review</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>eligibility_status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Not applicable</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>400</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:59:05</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:59:05</sys_updated_on>
-            <value>not_applicable</value>
-        </sys_choice>
     </sys_choice>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</application>
+        <file_path/>
+        <instance_id>c785520eebec9310e9bbfddacad0cdbd</instance_id>
+        <instance_name>dev483875</instance_name>
+        <merge_base/>
+        <name>sys_choice_x_2316178_contin_0_continuity_item_eligibility_status</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_choice action="INSERT_OR_UPDATE" field="eligibility_status" table="x_2316178_contin_0_continuity_item" version="3"><sys_choice_set action="INSERT_OR_UPDATE"><element>eligibility_status</element><name>x_2316178_contin_0_continuity_item</name><sys_class_name>sys_choice_set</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-11-16 19:58:50</sys_created_on><sys_id>ef4447da83249310e1615529feaad3aa</sys_id><sys_mod_count>0</sys_mod_count><sys_name>eligibility_status</sys_name><sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package><sys_policy/><sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope><sys_update_name>sys_choice_x_2316178_contin_0_continuity_item_eligibility_status</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-11-16 19:58:50</sys_updated_on></sys_choice_set></sys_choice></record_update>]]></payload>
+        <payload_hash>96095193</payload_hash>
+        <record_name>x_2316178_contin_0_continuity_item.Eligibility status</record_name>
+        <reverted_from/>
+        <source>c8f72cd783241310e1615529feaad37c</source>
+        <source_table>sys_update_set</source_table>
+        <state>current</state>
+        <sys_created_by>ClaudeUser</sys_created_by>
+        <sys_created_on>2026-11-19 11:10:22</sys_created_on>
+        <sys_id>eb18e05b83241310e1615529feaad3c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1f38020780000001</sys_recorded_at>
+        <sys_updated_by>ClaudeUser</sys_updated_by>
+        <sys_updated_on>2026-11-19 11:10:22</sys_updated_on>
+        <type>Choice list</type>
+        <update_guid>6b18e05bda241310efda62d5d6ba4fc4</update_guid>
+        <update_guid_history>6b18e05bda241310efda62d5d6ba4fc4:96095193,ef18e05bb4241310912ec76add5bcdab:1072478060,2f18e05bd3241310be43109156b5c79f:107826192,ab18e05bf32413103d63d63a261c5d76:-325260718,cb54cb5a05249310c0badf5f09015d26:-2087533899,ce540bdafc249310157a9647d3f489aa:-325260718,30540bda36249310d0b9387edfed1d0a:1038271850,6b4447da4c249310d088387c894ccfad:1072478060</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-19 11:11:13</sys_created_on>
+        <sys_db_object display_value="" name="sys_choice_set">sys_choice_set</sys_db_object>
+        <sys_id>44a4c6d32eca40b8b3f44ce7f75b1d24</sys_id>
+        <sys_metadata>ef4447da83249310e1615529feaad3aa</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>eligibility_status</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_parent display_value="">1d338b1a83249310e1615529feaad3f0</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_scope_delete display_value="">2858c0ddb89d48ba80453cd2bdcd80c9</sys_scope_delete>
+        <sys_update_name>sys_choice_x_2316178_contin_0_continuity_item_eligibility_status</sys_update_name>
+        <sys_update_version display_value="sys_choice_x_2316178_contin_0_continuity_item_eligibility_status">eb18e05b83241310e1615529feaad3c5</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-19 11:11:13</sys_updated_on>
+    </sys_metadata_delete>
 </record_update>

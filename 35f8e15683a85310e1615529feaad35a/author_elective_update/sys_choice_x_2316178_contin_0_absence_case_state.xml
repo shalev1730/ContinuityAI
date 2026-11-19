@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_choice action="INSERT_OR_UPDATE" field="state" table="x_2316178_contin_0_absence_case" version="3">
-        <sys_choice_set action="INSERT_OR_UPDATE">
+    <sys_choice action="DELETE" field="state" table="x_2316178_contin_0_absence_case" version="3">
+        <sys_choice_set action="DELETE">
             <element>state</element>
             <name>x_2316178_contin_0_absence_case</name>
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2026-11-16 14:02:56</sys_created_on>
+            <sys_id>4ed2b1d683e85310e1615529feaad3fa</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>state</sys_name>
             <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
@@ -15,119 +16,51 @@
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2026-11-16 14:02:56</sys_updated_on>
         </sys_choice_set>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>state</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Draft</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_absence_case</name>
-            <sequence>0</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 14:02:56</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 14:02:56</sys_updated_on>
-            <value>draft</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>state</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Planning</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_absence_case</name>
-            <sequence>1</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 14:02:56</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 14:02:56</sys_updated_on>
-            <value>planning</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>state</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Awaiting Approval</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_absence_case</name>
-            <sequence>2</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 14:02:56</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 14:02:56</sys_updated_on>
-            <value>awaiting_approval</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>state</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Executing</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_absence_case</name>
-            <sequence>3</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 14:02:56</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 14:02:56</sys_updated_on>
-            <value>executing</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>state</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Completed</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_absence_case</name>
-            <sequence>4</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 14:02:56</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 14:02:56</sys_updated_on>
-            <value>completed</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>state</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Partial</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_absence_case</name>
-            <sequence>5</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 14:02:56</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 14:02:56</sys_updated_on>
-            <value>partial</value>
-        </sys_choice>
     </sys_choice>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</application>
+        <file_path/>
+        <instance_id>c785520eebec9310e9bbfddacad0cdbd</instance_id>
+        <instance_name>dev483875</instance_name>
+        <merge_base/>
+        <name>sys_choice_x_2316178_contin_0_absence_case_state</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_choice action="INSERT_OR_UPDATE" field="state" table="x_2316178_contin_0_absence_case" version="3"><sys_choice_set action="INSERT_OR_UPDATE"><element>state</element><name>x_2316178_contin_0_absence_case</name><sys_class_name>sys_choice_set</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-11-16 14:02:56</sys_created_on><sys_id>4ed2b1d683e85310e1615529feaad3fa</sys_id><sys_mod_count>0</sys_mod_count><sys_name>state</sys_name><sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package><sys_policy/><sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope><sys_update_name>sys_choice_x_2316178_contin_0_absence_case_state</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-11-16 14:02:56</sys_updated_on></sys_choice_set></sys_choice></record_update>]]></payload>
+        <payload_hash>-319929302</payload_hash>
+        <record_name>x_2316178_contin_0_absence_case.state</record_name>
+        <reverted_from/>
+        <source>c8f72cd783241310e1615529feaad37c</source>
+        <source_table>sys_update_set</source_table>
+        <state>current</state>
+        <sys_created_by>ClaudeUser</sys_created_by>
+        <sys_created_on>2026-11-19 11:10:11</sys_created_on>
+        <sys_id>70186c1b83241310e1615529feaad39e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1f37ff48f0000001</sys_recorded_at>
+        <sys_updated_by>ClaudeUser</sys_updated_by>
+        <sys_updated_on>2026-11-19 11:10:11</sys_updated_on>
+        <type>Choice list</type>
+        <update_guid>fc186c1be4241310f0c15690c0cee79c</update_guid>
+        <update_guid_history>fc186c1be4241310f0c15690c0cee79c:-319929302,fc186c1b6124131082a3c130c0edaf90:-804451094,7c186c1bba2413100eaef5c2d300768c:443993368,f8186c1b51241310a652b07650068a88:-1345491704,b4186c1b25241310273145a6eda7155f:1311025911,74186c1b16241310d3d530b4300c7b5b:1791895175,86d2f1d6aee8531009ea00100e1f2d12:-498632</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-19 11:11:00</sys_created_on>
+        <sys_db_object display_value="" name="sys_choice_set">sys_choice_set</sys_db_object>
+        <sys_id>1d737edd607e49b99b87a79507e06579</sys_id>
+        <sys_metadata>4ed2b1d683e85310e1615529feaad3fa</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>state</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_parent display_value="">c5d271d683e85310e1615529feaad325</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_scope_delete display_value="">2858c0ddb89d48ba80453cd2bdcd80c9</sys_scope_delete>
+        <sys_update_name>sys_choice_x_2316178_contin_0_absence_case_state</sys_update_name>
+        <sys_update_version display_value="sys_choice_x_2316178_contin_0_absence_case_state">70186c1b83241310e1615529feaad39e</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-19 11:11:00</sys_updated_on>
+    </sys_metadata_delete>
 </record_update>

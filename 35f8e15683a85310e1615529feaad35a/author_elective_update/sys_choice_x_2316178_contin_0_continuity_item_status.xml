@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_choice action="INSERT_OR_UPDATE" field="status" table="x_2316178_contin_0_continuity_item" version="3">
-        <sys_choice_set action="INSERT_OR_UPDATE">
+    <sys_choice action="DELETE" field="status" table="x_2316178_contin_0_continuity_item" version="3">
+        <sys_choice_set action="DELETE">
             <element>status</element>
             <name>x_2316178_contin_0_continuity_item</name>
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2026-11-16 19:58:13</sys_created_on>
+            <sys_id>622443da83249310e1615529feaad370</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>status</sys_name>
             <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
@@ -15,157 +16,51 @@
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2026-11-16 19:58:13</sys_updated_on>
         </sys_choice_set>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Identified</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>100</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:58:13</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:58:13</sys_updated_on>
-            <value>identified</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Proposed</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>200</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:58:18</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:58:18</sys_updated_on>
-            <value>proposed</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Approved</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>300</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:58:21</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:58:21</sys_updated_on>
-            <value>approved</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Rejected</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>400</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:58:25</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:58:25</sys_updated_on>
-            <value>rejected</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Executed</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>500</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:58:30</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:58:30</sys_updated_on>
-            <value>executed</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Escalated</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>600</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:58:34</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:58:34</sys_updated_on>
-            <value>escalated</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Blocked</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>700</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:58:38</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:58:38</sys_updated_on>
-            <value>blocked</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>status</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Failed</label>
-            <language>en</language>
-            <name>x_2316178_contin_0_continuity_item</name>
-            <sequence>800</sequence>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 19:58:43</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 19:58:43</sys_updated_on>
-            <value>failed</value>
-        </sys_choice>
     </sys_choice>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</application>
+        <file_path/>
+        <instance_id>c785520eebec9310e9bbfddacad0cdbd</instance_id>
+        <instance_name>dev483875</instance_name>
+        <merge_base/>
+        <name>sys_choice_x_2316178_contin_0_continuity_item_status</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_choice action="INSERT_OR_UPDATE" field="status" table="x_2316178_contin_0_continuity_item" version="3"><sys_choice_set action="INSERT_OR_UPDATE"><element>status</element><name>x_2316178_contin_0_continuity_item</name><sys_class_name>sys_choice_set</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-11-16 19:58:13</sys_created_on><sys_id>622443da83249310e1615529feaad370</sys_id><sys_mod_count>0</sys_mod_count><sys_name>status</sys_name><sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package><sys_policy/><sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope><sys_update_name>sys_choice_x_2316178_contin_0_continuity_item_status</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-11-16 19:58:13</sys_updated_on></sys_choice_set></sys_choice></record_update>]]></payload>
+        <payload_hash>-1473287313</payload_hash>
+        <record_name>x_2316178_contin_0_continuity_item.Status</record_name>
+        <reverted_from/>
+        <source>c8f72cd783241310e1615529feaad37c</source>
+        <source_table>sys_update_set</source_table>
+        <state>current</state>
+        <sys_created_by>ClaudeUser</sys_created_by>
+        <sys_created_on>2026-11-19 11:10:22</sys_created_on>
+        <sys_id>ab18e05b83241310e1615529feaad3c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1f38020980000001</sys_recorded_at>
+        <sys_updated_by>ClaudeUser</sys_updated_by>
+        <sys_updated_on>2026-11-19 11:10:22</sys_updated_on>
+        <type>Choice list</type>
+        <update_guid>2b18e05b07241310547f0a7fd8d653c8</update_guid>
+        <update_guid_history>2b18e05b07241310547f0a7fd8d653c8:-1473287313,ab18e05b7f2413107bdd3c1cb9c799c0:-962918679,6f18e05ba82413103cad0dcf2e95bba7:-140387950,ab18e05b122413104010d699d478319b:1886334842,2318e05b7324131070d81d870ed8f687:272252738,af18e05bfe24131000c41775bd4ac882:-2129113605,eb18e05b9f241310da49ba0b6c2a987a:2108184515,e718e05b5624131018689a64fe6dfd6a:-1870673636,394487daf2249310cbf2b5caca73e04d:638805793,b04447da762493100503fb5132cac3ff:-2142703651,673407da8e249310c52164599b9186de:1444622082,623407da672493100824df3ab1a38ebb:-718606582,913403da53249310e4b40a1f5b1f210c:-167855503,a83483da80249310cc8013a516721ed3:-45121751,6b2483dada24931048a683da27714345:531361072,ea2443da7c249310e7cc2fd01f6f6972:-661044408</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-19 11:11:03</sys_created_on>
+        <sys_db_object display_value="" name="sys_choice_set">sys_choice_set</sys_db_object>
+        <sys_id>067cc00421544337a256dced6e6a04a9</sys_id>
+        <sys_metadata>622443da83249310e1615529feaad370</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>status</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_parent display_value="">1d13471a83249310e1615529feaad3db</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_scope_delete display_value="">2858c0ddb89d48ba80453cd2bdcd80c9</sys_scope_delete>
+        <sys_update_name>sys_choice_x_2316178_contin_0_continuity_item_status</sys_update_name>
+        <sys_update_version display_value="sys_choice_x_2316178_contin_0_continuity_item_status">ab18e05b83241310e1615529feaad3c9</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-19 11:11:03</sys_updated_on>
+    </sys_metadata_delete>
 </record_update>

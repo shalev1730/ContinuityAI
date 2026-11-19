@@ -2,7 +2,7 @@
     <sys_index action="INSERT_OR_UPDATE">
         <access_method>btree</access_method>
         <col_name_string>employee</col_name_string>
-        <index_col_name element="employee" name="x_2316178_contin_0_employee_profile">0c59b5d2832c5310e1615529feaad337<sys_dictionary element="employee" name="x_2316178_contin_0_employee_profile">0c59b5d2832c5310e1615529feaad337</sys_dictionary>
+        <index_col_name>0c59b5d2832c5310e1615529feaad337<sys_dictionary>0c59b5d2832c5310e1615529feaad337</sys_dictionary>
         </index_col_name>
         <logical_table_name>x_2316178_contin_0_employee_profile</logical_table_name>
         <sys_class_name>sys_index</sys_class_name>
@@ -17,7 +17,7 @@
         <sys_update_name>sys_index_x_2316178_contin_0_employee_profile_employee</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
         <sys_updated_on>2026-11-16 14:34:02</sys_updated_on>
-        <table display_value="Employee Profile" name="x_2316178_contin_0_employee_profile">220575da83e85310e1615529feaad342</table>
+        <table/>
         <unique_index>true</unique_index>
     </sys_index>
 </record_update>
