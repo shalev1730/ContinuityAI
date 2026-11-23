@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="97378563140545ba8250747ebbcde278" extends="task" label="Continuity Project Task" name="x_2316178_contin_0_proj_task" type="collection">
-        <element label="Project Manager" name="project_manager" reference="sys_user" type="reference"/>
-        <element label="Planned End" name="planned_end" type="glide_date_time"/>
-        <element label="Planned Start" name="planned_start" type="glide_date_time"/>
+        <element label="Project Manager" max_length="32" name="project_manager" reference="sys_user" type="reference"/>
+        <element label="Planned End" max_length="40" name="planned_end" type="glide_date_time"/>
+        <element label="Planned Start" max_length="40" name="planned_start" type="glide_date_time"/>
     </element>
 </database>

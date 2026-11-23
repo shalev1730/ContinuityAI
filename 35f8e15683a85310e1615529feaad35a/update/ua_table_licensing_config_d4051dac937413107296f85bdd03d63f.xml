@@ -4,22 +4,22 @@
         <license_condition/>
         <license_model>none</license_model>
         <license_roles/>
-        <name>x_2316178_contin_0_ewt</name>
+        <name>x_2316178_contin_0_emp_profile</name>
         <op_delete>true</op_delete>
         <op_insert>true</op_insert>
         <op_update>true</op_update>
         <owner_condition/>
         <sys_class_name>ua_table_licensing_config</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-11-23 09:52:37</sys_created_on>
-        <sys_id>efacbc2c0ff813109e88bff300d1b2df</sys_id>
+        <sys_created_on>2026-11-23 09:36:13</sys_created_on>
+        <sys_id>d4051dac937413107296f85bdd03d63f</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_2316178_contin_0_ewt</sys_name>
+        <sys_name>x_2316178_contin_0_emp_profile</sys_name>
         <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
-        <sys_update_name>ua_table_licensing_config_efacbc2c0ff813109e88bff300d1b2df</sys_update_name>
+        <sys_update_name>ua_table_licensing_config_d4051dac937413107296f85bdd03d63f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-11-23 09:52:37</sys_updated_on>
+        <sys_updated_on>2026-11-23 09:36:13</sys_updated_on>
     </ua_table_licensing_config>
 </record_update>

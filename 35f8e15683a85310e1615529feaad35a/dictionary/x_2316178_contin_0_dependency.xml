@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="31a5ae9febef4c65870402b08c604904" label="Dependency" name="x_2316178_contin_0_dependency" type="collection">
-        <element label="Related Project" name="related_project" reference="x_2316178_contin_0_proj_task" type="reference"/>
-        <element label="Contact" name="contact" reference="sys_user" type="reference"/>
-        <element label="Dependency Type" name="dependency_type" type="choice">
+        <element label="Related Project" max_length="32" name="related_project" reference="x_2316178_contin_0_proj_task" type="reference"/>
+        <element label="Required Skill" max_length="32" name="required_skill" reference="x_2316178_contin_0_skill" type="reference"/>
+        <element display="true" label="Name" mandatory="true" max_length="200" name="name" type="string"/>
+        <element label="Contact" max_length="32" name="contact" reference="sys_user" type="reference"/>
+        <element label="Criticality" max_length="40" name="criticality" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Low" sequence="400" value="low"/>
+                <element inactive_on_update="false" label="Critical" sequence="100" value="critical"/>
+                <element inactive_on_update="false" label="Medium" sequence="300" value="medium"/>
+                <element inactive_on_update="false" label="High" sequence="200" value="high"/>
+            </choice>
+        </element>
+        <element label="Notes" max_length="4000" name="notes" type="string"/>
+        <element label="Related CI" max_length="32" name="related_ci" reference="cmdb_ci" type="reference"/>
+        <element label="Dependency Type" max_length="40" name="dependency_type" type="choice">
             <choice>
                 <element inactive_on_update="false" label="CI" sequence="200" value="ci"/>
                 <element inactive_on_update="false" label="Project" sequence="100" value="project"/>
             </choice>
         </element>
-        <element label="Criticality" name="criticality" type="choice">
-            <choice>
-                <element inactive_on_update="false" label="Low" sequence="400" value="low"/>
-                <element inactive_on_update="false" label="High" sequence="200" value="high"/>
-                <element inactive_on_update="false" label="Critical" sequence="100" value="critical"/>
-                <element inactive_on_update="false" label="Medium" sequence="300" value="medium"/>
-            </choice>
-        </element>
-        <element label="Notes" max_length="4000" name="notes" type="string"/>
-        <element label="Backup" name="backup" reference="sys_user" type="reference"/>
-        <element label="Required Skill" name="required_skill" reference="x_2316178_contin_0_skill" type="reference"/>
-        <element display="true" label="Name" mandatory="true" max_length="200" name="name" type="string"/>
-        <element label="Related CI" name="related_ci" reference="cmdb_ci" type="reference"/>
+        <element label="Backup" max_length="32" name="backup" reference="sys_user" type="reference"/>
         <index name="index">
             <element name="backup"/>
         </index>

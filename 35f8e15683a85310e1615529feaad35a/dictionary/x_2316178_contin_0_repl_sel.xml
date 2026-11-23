@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="425ff7c05d1f4c20a6093844400f20ab" label="Replacement Selection" name="x_2316178_contin_0_repl_sel" type="collection">
-        <element label="Planned Hours" name="planned_hours" type="decimal"/>
-        <element label="Reason" max_length="1000" name="reason" type="string"/>
-        <element label="Continuity Item" mandatory="true" name="continuity_item" reference="x_2316178_contin_0_cont_item" type="reference"/>
-        <element default="pending" label="Execution Status" name="execution_status" type="choice">
+        <element label="Continuity Item" mandatory="true" max_length="32" name="continuity_item" reference="x_2316178_contin_0_cont_item" type="reference"/>
+        <element label="Selected By" max_length="32" name="selected_by" reference="sys_user" type="reference"/>
+        <element label="Selection Order" max_length="40" name="selection_order" type="integer"/>
+        <element default="pending" label="Execution Status" max_length="40" name="execution_status" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Pending" sequence="100" value="pending"/>
-                <element inactive_on_update="false" label="Completed" sequence="300" value="completed"/>
-                <element inactive_on_update="false" label="Failed" sequence="400" value="failed"/>
-                <element inactive_on_update="false" label="In Progress" sequence="200" value="in_progress"/>
                 <element inactive_on_update="false" label="Skipped" sequence="500" value="skipped"/>
+                <element inactive_on_update="false" label="In Progress" sequence="200" value="in_progress"/>
+                <element inactive_on_update="false" label="Pending" sequence="100" value="pending"/>
+                <element inactive_on_update="false" label="Failed" sequence="400" value="failed"/>
+                <element inactive_on_update="false" label="Completed" sequence="300" value="completed"/>
             </choice>
         </element>
-        <element default="active" label="Status" name="status" type="choice">
+        <element default="active" label="Status" max_length="40" name="status" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Active" sequence="100" value="active"/>
                 <element inactive_on_update="false" label="Withdrawn" sequence="200" value="withdrawn"/>
+                <element inactive_on_update="false" label="Active" sequence="100" value="active"/>
             </choice>
         </element>
-        <element display="true" label="Replacement User" mandatory="true" name="replacement_user" reference="sys_user" type="reference"/>
-        <element label="Selected By" name="selected_by" reference="sys_user" type="reference"/>
-        <element label="Selection Order" name="selection_order" type="integer"/>
+        <element label="Planned Hours" max_length="15" name="planned_hours" type="decimal"/>
+        <element label="Reason" max_length="1000" name="reason" type="string"/>
+        <element display="true" label="Replacement User" mandatory="true" max_length="32" name="replacement_user" reference="sys_user" type="reference"/>
         <index name="index">
             <element name="continuity_item"/>
         </index>

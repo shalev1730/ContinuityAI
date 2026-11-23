@@ -79,7 +79,6 @@
         <file_path/>
         <instance_id>c785520eebec9310e9bbfddacad0cdbd</instance_id>
         <instance_name>dev483875</instance_name>
-        <merge_base/>
         <name>sys_dictionary_x_2316178_contin_0_action_log_executed_at</name>
         <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update&gt;&lt;sys_dictionary action="INSERT_OR_UPDATE" element="executed_at" table="x_2316178_contin_0_action_log"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes/&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
 
