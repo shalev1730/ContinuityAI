@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="8a669a2b36c84f68993b0fb4997e721d" sys_domain="global" table="x_2316178_contin_0_dependency" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e92df1e7b4c9485386c0c9ef2c0b82a6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_2316178_contin_0_dependency" name="x_2316178_contin_0_dependency" sys_domain="global" view="Default view">8a669a2b36c84f68993b0fb4997e721d</sys_ui_form>
+            <sys_ui_section caption="Dependency Details" display_value="Dependency Details" name="x_2316178_contin_0_dependency" sys_domain="global" view="Default view">03d3f4bf46de470faf5bb2742be06b1b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:22</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:23</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e14a26d49d3d4bdfa9b3fa23df02a68c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_2316178_contin_0_dependency" name="x_2316178_contin_0_dependency" sys_domain="global" view="Default view">8a669a2b36c84f68993b0fb4997e721d</sys_ui_form>
+            <sys_ui_section caption="Notes" display_value="Notes" name="x_2316178_contin_0_dependency" sys_domain="global" view="Default view">7ea9e45ee0a44d45b643d9b492372b6a</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:23</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_2316178_contin_0_dependency</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 10:57:15</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8a669a2b36c84f68993b0fb4997e721d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_2316178_contin_0_dependency</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+            <sys_update_name>sys_ui_form_sections_8a669a2b36c84f68993b0fb4997e721d</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 10:57:15</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

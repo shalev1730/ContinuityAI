@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2316178_contin_0.AuthorizationService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Authorization checks for continuity item approval and execution. Validates responsible manager ownership and role-based permissions.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>AuthorizationService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var AuthorizationService = Class.create();
+AuthorizationService.prototype = {
+    initialize: function() {},
+
+    canApproveItem: function(itemSysId, userId) {
+        if (!itemSysId || !userId) return { authorized: false, reason: 'Missing item or user' };
+
+        var ci = new GlideRecord('x_2316178_contin_0_cont_item');
+        if (!ci.get(itemSysId)) return { authorized: false, reason: 'Continuity Item not found' };
+
+        var responsibleMgr = ci.getValue('responsible_manager');
+        if (!responsibleMgr) return { authorized: false, reason: 'No responsible manager assigned' };
+
+        if (responsibleMgr != userId) {
+            return { authorized: false, reason: 'User is not the responsible manager for this item' };
+        }
+
+        // Check item is in pending state
+        if (ci.getValue('decision_state') != 'pending') {
+            return { authorized: false, reason: 'Item is not in pending state' };
+        }
+
+        return { authorized: true, reason: 'User is the responsible manager' };
+    },
+
+    canExecuteItem: function(itemSysId, userId) {
+        if (!itemSysId || !userId) return { authorized: false, reason: 'Missing item or user' };
+
+        var ci = new GlideRecord('x_2316178_contin_0_cont_item');
+        if (!ci.get(itemSysId)) return { authorized: false, reason: 'Continuity Item not found' };
+
+        if (ci.getValue('decision_state') != 'approved') {
+            return { authorized: false, reason: 'Item is not approved' };
+        }
+
+        // Check user has operator role
+        var gr = new GlideRecord('sys_user_has_role');
+        gr.addQuery('user', userId);
+        gr.addQuery('role.name', 'x_2316178_contin_0.continuity_operator');
+        gr.query();
+        if (!gr.next()) {
+            // Also check inherited roles
+            if (!gs.hasRole('x_2316178_contin_0.continuity_operator')) {
+                return { authorized: false, reason: 'User does not have operator role' };
+            }
+        }
+
+        return { authorized: true, reason: 'User is authorized to execute' };
+    },
+
+    logDenial: function(action, userId, reason) {
+        gs.info('Authorization denied: action=' + action + ', user=' + userId + ', reason=' + reason);
+    },
+
+    type: 'AuthorizationService'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-23 11:06:55</sys_created_on>
+        <sys_id>9f8c9377c9624882b92fdd1c0997f6af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AuthorizationService</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_update_name>sys_script_include_9f8c9377c9624882b92fdd1c0997f6af</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-23 11:06:55</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="x_2316178_contin_0.continuity_manager" name="x_2316178_contin_0.continuity_manager">e1b6e95c03f04bf0af710c529eea0075</contains>
+        <role display_value="x_2316178_contin_0.continuity_admin" name="x_2316178_contin_0.continuity_admin">827cc98e065c4651ae2860f99c9ac3c7</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-23 11:07:05</sys_created_on>
+        <sys_id>d138a104ce6144fdac6ce0399dc98708</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2316178_contin_0.continuity_manager.x_2316178_contin_0.continuity_admin</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_update_name>sys_user_role_contains_d138a104ce6144fdac6ce0399dc98708</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-23 11:07:05</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="8639096b0a9045e29636c61c2d403308" label="Continuity Item" name="x_2316178_contin_0_cont_item" type="collection">
+        <element default="pending" label="Execution State" name="execution_state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Failed" sequence="4" value="failed"/>
+                <element inactive_on_update="false" label="Skipped" sequence="5" value="skipped"/>
+                <element inactive_on_update="false" label="Completed" sequence="3" value="completed"/>
+                <element inactive_on_update="false" label="In Progress" sequence="2" value="in_progress"/>
+                <element inactive_on_update="false" label="Pending" sequence="1" value="pending"/>
+            </choice>
+        </element>
+        <element display="true" label="Subject Employee" mandatory="true" name="subject_employee" reference="sys_user" type="reference"/>
+        <element label="Absence RITM" name="absence_ritm" reference="sc_req_item" type="reference"/>
+        <element label="Run ID" mandatory="true" max_length="100" name="run_id" type="string"/>
+        <element label="Unknowns" max_length="2000" name="unknowns" type="string"/>
+        <element default="none" label="Alert State" name="alert_state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Acknowledged" sequence="3" value="acknowledged"/>
+                <element inactive_on_update="false" label="Resolved" sequence="4" value="resolved"/>
+                <element inactive_on_update="false" label="None" sequence="1" value="none"/>
+                <element inactive_on_update="false" label="Active" sequence="2" value="active"/>
+            </choice>
+        </element>
+        <element label="Source Sys ID" mandatory="true" max_length="32" name="source_sys_id" type="string"/>
+        <element label="Explanation" max_length="4000" name="explanation" type="string"/>
+        <element label="Work Kind" max_length="100" name="work_kind" type="string"/>
+        <element label="Impact Start" name="impact_start" type="glide_date"/>
+        <element label="Handover Summary" max_length="4000" name="handover_summary" type="string"/>
+        <element label="Approval Hash" max_length="200" name="approval_hash" type="string"/>
+        <element label="Run Type" name="run_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Manual Replacement" sequence="3" value="manual_replacement"/>
+                <element inactive_on_update="false" label="Absence" sequence="1" value="absence"/>
+                <element inactive_on_update="false" label="Manual Impact" sequence="2" value="manual_impact"/>
+            </choice>
+        </element>
+        <element label="Responsible Manager" name="responsible_manager" reference="sys_user" type="reference"/>
+        <element label="Handover Sources" max_length="4000" name="handover_sources" type="string"/>
+        <element label="Source Table" mandatory="true" max_length="80" name="source_table" type="string"/>
+        <element label="Approved By" name="approved_by" reference="sys_user" type="reference"/>
+        <element label="Impact End" name="impact_end" type="glide_date"/>
+        <element label="Impact Reason" max_length="1000" name="impact_reason" type="string"/>
+        <element label="Inferred Skills" name="inferred_skills" reference="x_2316178_contin_0_skill" type="glide_list"/>
+        <element label="Approved On" name="approved_on" type="glide_date_time"/>
+        <element label="Window End" name="window_end" type="glide_date"/>
+        <element label="Window Start" name="window_start" type="glide_date"/>
+        <element default="demo" label="Run Mode" max_length="20" name="run_mode" type="string"/>
+        <element label="Source Stage Key" max_length="100" name="source_stage_key" type="string"/>
+        <element label="Involvement Type" name="involvement_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Future Conditional" sequence="3" value="future-conditional"/>
+                <element inactive_on_update="false" label="Current" sequence="1" value="current"/>
+                <element inactive_on_update="false" label="Future Confirmed" sequence="2" value="future-confirmed"/>
+            </choice>
+        </element>
+        <element default="pending" label="Decision State" name="decision_state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Pending" sequence="1" value="pending"/>
+                <element inactive_on_update="false" label="Approved" sequence="2" value="approved"/>
+                <element inactive_on_update="false" label="Rejected" sequence="3" value="rejected"/>
+            </choice>
+        </element>
+        <element label="Evidence" max_length="4000" name="evidence" type="string"/>
+        <index name="index">
+            <element name="absence_ritm"/>
+        </index>
+        <index name="index2">
+            <element name="approved_by"/>
+        </index>
+        <index name="index3">
+            <element name="responsible_manager"/>
+        </index>
+        <index name="index4">
+            <element name="subject_employee"/>
+        </index>
+    </element>
+</database>

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_choice action="DELETE" field="criticality" table="x_2316178_contin_0_dependency" version="3">
-        <sys_choice_set action="DELETE">
+    <sys_choice action="INSERT_OR_UPDATE" field="criticality" table="x_2316178_contin_0_dependency" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
             <element>criticality</element>
             <name>x_2316178_contin_0_dependency</name>
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2026-11-16 14:53:35</sys_created_on>
-            <sys_id>887ef55e832c5310e1615529feaad393</sys_id>
+            <sys_created_on>2026-11-23 10:57:12</sys_created_on>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>criticality</sys_name>
             <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
@@ -14,53 +13,83 @@
             <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
             <sys_update_name>sys_choice_x_2316178_contin_0_dependency_criticality</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2026-11-16 14:53:35</sys_updated_on>
+            <sys_updated_on>2026-11-23 10:57:12</sys_updated_on>
         </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>criticality</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Critical</label>
+            <language>en</language>
+            <name>x_2316178_contin_0_dependency</name>
+            <sequence>100</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:17</sys_updated_on>
+            <value>critical</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>criticality</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>High</label>
+            <language>en</language>
+            <name>x_2316178_contin_0_dependency</name>
+            <sequence>200</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:17</sys_updated_on>
+            <value>high</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>criticality</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Medium</label>
+            <language>en</language>
+            <name>x_2316178_contin_0_dependency</name>
+            <sequence>300</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:17</sys_updated_on>
+            <value>medium</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>criticality</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Low</label>
+            <language>en</language>
+            <name>x_2316178_contin_0_dependency</name>
+            <sequence>400</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:17</sys_updated_on>
+            <value>low</value>
+        </sys_choice>
     </sys_choice>
-    <sys_update_version action="INSERT_OR_UPDATE">
-        <action>DELETE</action>
-        <application display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</application>
-        <file_path/>
-        <instance_id>c785520eebec9310e9bbfddacad0cdbd</instance_id>
-        <instance_name>dev483875</instance_name>
-        <merge_base/>
-        <name>sys_choice_x_2316178_contin_0_dependency_criticality</name>
-        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_choice action="INSERT_OR_UPDATE" field="criticality" table="x_2316178_contin_0_dependency" version="3"><sys_choice_set action="INSERT_OR_UPDATE"><element>criticality</element><name>x_2316178_contin_0_dependency</name><sys_class_name>sys_choice_set</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-11-16 14:53:35</sys_created_on><sys_id>887ef55e832c5310e1615529feaad393</sys_id><sys_mod_count>0</sys_mod_count><sys_name>criticality</sys_name><sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package><sys_policy/><sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope><sys_update_name>sys_choice_x_2316178_contin_0_dependency_criticality</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-11-16 14:53:35</sys_updated_on></sys_choice_set></sys_choice></record_update>]]></payload>
-        <payload_hash>1906579248</payload_hash>
-        <record_name>x_2316178_contin_0_dependency.Criticality</record_name>
-        <reverted_from/>
-        <source>c8f72cd783241310e1615529feaad37c</source>
-        <source_table>sys_update_set</source_table>
-        <state>current</state>
-        <sys_created_by>ClaudeUser</sys_created_by>
-        <sys_created_on>2026-11-19 11:09:59</sys_created_on>
-        <sys_id>4a08e41b83241310e1615529feaad34c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_recorded_at>1a1f37fc58f0000001</sys_recorded_at>
-        <sys_updated_by>ClaudeUser</sys_updated_by>
-        <sys_updated_on>2026-11-19 11:09:59</sys_updated_on>
-        <type>Choice list</type>
-        <update_guid>c608e41b0c241310570696c5976eb34b</update_guid>
-        <update_guid_history>c608e41b0c241310570696c5976eb34b:1906579248,7908e41b8524131010dbe4d4ac8a8343:1170254566,b508e41b7e241310c9ce682f78d75c3b:2090895904,7508e41b022413102d8939140aa73b37:-1982944369,f71f31de3b2c5310809e114a170cbc46:-743967552,681fbd9e652c53101a6e69e386d5f0e1:910971974,fb9eb55e182c53109249d30a8ab65ef4:-862723753,047ef55ee52c5310409d70f3969c1297:1343841439</update_guid_history>
-    </sys_update_version>
-    <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete/>
-        <sys_class_name>sys_metadata_delete</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2026-11-19 11:11:06</sys_created_on>
-        <sys_db_object display_value="" name="sys_choice_set">sys_choice_set</sys_db_object>
-        <sys_id>14476763c84142789b3be9f81f478310</sys_id>
-        <sys_metadata>887ef55e832c5310e1615529feaad393</sys_metadata>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>criticality</sys_name>
-        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
-        <sys_parent display_value="">5e4ebdda832c5310e1615529feaad336</sys_parent>
-        <sys_policy/>
-        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
-        <sys_scope_delete display_value="">2858c0ddb89d48ba80453cd2bdcd80c9</sys_scope_delete>
-        <sys_update_name>sys_choice_x_2316178_contin_0_dependency_criticality</sys_update_name>
-        <sys_update_version display_value="sys_choice_x_2316178_contin_0_dependency_criticality">4a08e41b83241310e1615529feaad34c</sys_update_version>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-11-19 11:11:06</sys_updated_on>
-    </sys_metadata_delete>
 </record_update>

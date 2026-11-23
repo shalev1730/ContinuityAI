@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="ea33666f0179443785cabebcee2e0bbc" label="Resource Plan" name="x_2316178_contin_0_res_plan" type="collection">
+        <element label="End Date" name="end_date" type="glide_date_time"/>
+        <element default="0" label="Actual Hours" name="actual_hours" type="decimal"/>
+        <element label="Start Date" name="start_date" type="glide_date_time"/>
+        <element label="Assignment Group" name="assignment_group" reference="sys_user_group" type="reference"/>
+        <element default="0" label="Planned Hours" name="planned_hours" type="decimal"/>
+        <element display="true" label="Project Task" mandatory="true" name="project_task" reference="x_2316178_contin_0_proj_task" type="reference" unique="true"/>
+        <index name="index">
+            <element name="assignment_group"/>
+        </index>
+        <index name="index2" unique="true">
+            <element name="project_task"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2316178_contin_0.FreezeService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Creates and cleans up freeze Time Cards for approved/rejected absence RITMs. Idempotent per user/RITM/week.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>FreezeService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var FreezeService = Class.create();
+FreezeService.prototype = {
+    initialize: function() {},
+
+    /**
+     * Create freeze Time Cards for an approved absence.
+     * Idempotent: will not create duplicate freeze TCs for the same user/RITM/week.
+     *
+     * @param {string} userId - sys_id of the absent employee
+     * @param {string} ritmId - sys_id of the approved RITM (used as task reference)
+     * @param {string} startDate - absence start date (yyyy-MM-dd)
+     * @param {string} endDate - absence end date (yyyy-MM-dd)
+     * @returns {object} { created: number, skipped: number, weeks: string[] }
+     */
+    createFreezeCards: function(userId, ritmId, startDate, endDate) {
+        var result = { created: 0, skipped: 0, weeks: [] };
+        if (!userId || !ritmId || !startDate || !endDate) return result;
+
+        // Collect all unique week_starts that overlap the absence
+        var weekStarts = {};
+        var cursor = new GlideDateTime(startDate + ' 00:00:00');
+        var end = new GlideDateTime(endDate + ' 00:00:00');
+
+        while (cursor.compareTo(end) <= 0) {
+            var dayStr = cursor.getDate().getByFormat('yyyy-MM-dd');
+            var ws = this._getWeekStart(dayStr);
+            if (!weekStarts[ws]) {
+                weekStarts[ws] = [];
+            }
+            weekStarts[ws].push(dayStr);
+            cursor.addDaysLocalTime(1);
+        }
+
+        // For each unique week, create a freeze TC if one doesn't already exist
+        for (var weekStart in weekStarts) {
+            if (!weekStarts.hasOwnProperty(weekStart)) continue;
+
+            result.weeks.push(weekStart);
+
+            // Check idempotency
+            var existing = new GlideRecord('x_2316178_contin_0_time_card');
+            existing.addQuery('user', userId);
+            existing.addQuery('task', ritmId);
+            existing.addQuery('report_type', 'freeze');
+            existing.addQuery('week_start', weekStart);
+            existing.query();
+
+            if (existing.next()) {
+                result.skipped++;
+                continue;
+            }
+
+            // Create a freeze TC for this week with day-level precision
+            var frozenDays = weekStarts[weekStart];
+            var tc = new GlideRecord('x_2316178_contin_0_time_card');
+            tc.initialize();
+            tc.setValue('user', userId);
+            tc.setValue('task', ritmId);
+            tc.setValue('report_type', 'freeze');
+            tc.setValue('week_start', weekStart);
+
+            var dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            for (var d = 0; d < 7; d++) {
+                var dayGdt = new GlideDateTime(weekStart + ' 00:00:00');
+                dayGdt.addDaysLocalTime(d);
+                var dayDateStr = dayGdt.getDate().getByFormat('yyyy-MM-dd');
+
+                if (frozenDays.indexOf(dayDateStr) >= 0) {
+                    tc.setValue(dayNames[d], 1);
+                } else {
+                    tc.setValue(dayNames[d], 0);
+                }
+            }
+
+            tc.insert();
+            result.created++;
+        }
+
+        return result;
+    },
+
+    /**
+     * Remove freeze Time Cards for a specific user/RITM.
+     * Used when a RITM is rejected or cancelled after freeze cards were created.
+     */
+    cleanupFreezeCards: function(userId, ritmId) {
+        var result = { deleted: 0 };
+        if (!userId || !ritmId) return result;
+
+        var gr = new GlideRecord('x_2316178_contin_0_time_card');
+        gr.addQuery('user', userId);
+        gr.addQuery('task', ritmId);
+        gr.addQuery('report_type', 'freeze');
+        gr.query();
+
+        while (gr.next()) {
+            gr.deleteRecord();
+            result.deleted++;
+        }
+
+        return result;
+    },
+
+    /**
+     * Get the Sunday week_start for a given date.
+     */
+    _getWeekStart: function(dateStr) {
+        var gdt = new GlideDateTime(dateStr + ' 00:00:00');
+        var dow = gdt.getDayOfWeekLocalTime();
+        var sub = dow % 7;
+        if (sub > 0) gdt.addDaysLocalTime(-sub);
+        return gdt.getDate().getByFormat('yyyy-MM-dd');
+    },
+
+    type: 'FreezeService'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-23 11:27:09</sys_created_on>
+        <sys_id>c33bd4ccddf64f38b1cb994a23d60c86</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FreezeService</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_update_name>sys_script_include_c33bd4ccddf64f38b1cb994a23d60c86</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-23 11:27:09</sys_updated_on>
+    </sys_script_include>
+</record_update>

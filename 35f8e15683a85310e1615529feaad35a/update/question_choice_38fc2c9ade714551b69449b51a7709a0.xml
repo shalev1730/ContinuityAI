@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>1</order>
+        <published_ref/>
+        <question display_value="Absence Reason">d0fbadb9df6c40d1bb0d9fdbb64a5184</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-23 11:14:50</sys_created_on>
+        <sys_id>38fc2c9ade714551b69449b51a7709a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Reserve Duty</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_update_name>question_choice_38fc2c9ade714551b69449b51a7709a0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-23 11:14:50</sys_updated_on>
+        <text>Reserve Duty</text>
+        <value>reserve_duty</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=38fc2c9ade714551b69449b51a7709a0"/>
+</record_update>

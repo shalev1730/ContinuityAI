@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-23 11:06:58</sys_created_on>
+        <sys_id>006b64c646e14c4a892abf24e6f8961b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2316178_contin_0_res_plan.x_2316178_contin_0.continuity_admin</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_security_acl display_value="x_2316178_contin_0_res_plan">85d2d6806f404feba99234df9400ca66</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_006b64c646e14c4a892abf24e6f8961b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-23 11:06:58</sys_updated_on>
+        <sys_user_role display_value="x_2316178_contin_0.continuity_admin" name="x_2316178_contin_0.continuity_admin">827cc98e065c4651ae2860f99c9ac3c7</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

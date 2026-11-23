@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="planned_end" label="Planned End" language="en" table="x_2316178_contin_0_proj_task">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>planned_end</element>
+            <help/>
+            <hint/>
+            <label>Planned End</label>
+            <language>en</language>
+            <name>x_2316178_contin_0_proj_task</name>
+            <plural>Planned Ends</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 09:45:36</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Planned End</sys_name>
+            <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+            <sys_update_name>sys_documentation_x_2316178_contin_0_proj_task_planned_end_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 09:45:36</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

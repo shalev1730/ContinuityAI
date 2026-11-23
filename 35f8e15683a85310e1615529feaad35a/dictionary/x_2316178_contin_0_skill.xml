@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="112d18a4aed64d2791e8a8e73b5bb34c" label="Skill" name="x_2316178_contin_0_skill" type="collection">
+        <element default="true" label="Active" name="active" type="boolean"/>
+        <element display="true" label="Skill Name" mandatory="true" name="name" type="string" unique="true"/>
+        <index name="index" unique="true">
+            <element name="name"/>
+        </index>
+    </element>
+</database>

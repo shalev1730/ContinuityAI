@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Action Details" section_id="f8399b5fdad04957a9f5f0815333cec0" sys_domain="global" table="x_2316178_contin_0_action_log" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>05a65a6809384203a215a1283a379b98</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Action Details" display_value="Action Details" name="x_2316178_contin_0_action_log" sys_domain="global" view="Default view">f8399b5fdad04957a9f5f0815333cec0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>continuity_item</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>438a9b806bf440469933e64535fba9fb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Action Details" display_value="Action Details" name="x_2316178_contin_0_action_log" sys_domain="global" view="Default view">f8399b5fdad04957a9f5f0815333cec0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>action_type</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>f6b2781b90f249c5ae6091c546b94cc5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Action Details" display_value="Action Details" name="x_2316178_contin_0_action_log" sys_domain="global" view="Default view">f8399b5fdad04957a9f5f0815333cec0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>target_user</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>99342d2662c245feb9e1ed2512c80670</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Action Details" display_value="Action Details" name="x_2316178_contin_0_action_log" sys_domain="global" view="Default view">f8399b5fdad04957a9f5f0815333cec0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>approved_actor</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>58b83c99209a4e938da5126e2ad04cbc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Action Details" display_value="Action Details" name="x_2316178_contin_0_action_log" sys_domain="global" view="Default view">f8399b5fdad04957a9f5f0815333cec0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>ae23221b7cb94717a5a9789030f42b28</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Action Details" display_value="Action Details" name="x_2316178_contin_0_action_log" sys_domain="global" view="Default view">f8399b5fdad04957a9f5f0815333cec0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>source_table</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>df775a20d60c4673ac4969bea66e87e4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Action Details" display_value="Action Details" name="x_2316178_contin_0_action_log" sys_domain="global" view="Default view">f8399b5fdad04957a9f5f0815333cec0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>source_sys_id</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>a7aab108cb0d4ecda2acc46cbeb71d3f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Action Details" display_value="Action Details" name="x_2316178_contin_0_action_log" sys_domain="global" view="Default view">f8399b5fdad04957a9f5f0815333cec0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>executed_actor</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>b38b0d649643442f93116c8b33d954ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Action Details" display_value="Action Details" name="x_2316178_contin_0_action_log" sys_domain="global" view="Default view">f8399b5fdad04957a9f5f0815333cec0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>executed_on</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>9a077b88a3e4417a99fcbe94d5122f84</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Action Details" display_value="Action Details" name="x_2316178_contin_0_action_log" sys_domain="global" view="Default view">f8399b5fdad04957a9f5f0815333cec0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>ee6336bf9dc64369b77cc440d604bab7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Action Details" display_value="Action Details" name="x_2316178_contin_0_action_log" sys_domain="global" view="Default view">f8399b5fdad04957a9f5f0815333cec0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Action Details</caption>
+            <header>false</header>
+            <name>x_2316178_contin_0_action_log</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 10:57:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f8399b5fdad04957a9f5f0815333cec0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_2316178_contin_0_action_log</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+            <sys_update_name>sys_ui_section_f8399b5fdad04957a9f5f0815333cec0</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 10:57:18</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

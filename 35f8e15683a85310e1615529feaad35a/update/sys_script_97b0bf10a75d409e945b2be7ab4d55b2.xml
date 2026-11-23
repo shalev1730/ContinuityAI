@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_2316178_contin_0_time_card</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Validate Time Card</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function validateTimeCard(current) {
+    // 1. Prevent negative hours
+    var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    for (var i = 0; i < days.length; i++) {
+        var val = parseFloat(current.getValue(days[i]));
+        if (!isNaN(val) && val < 0) {
+            gs.addErrorMessage('Negative hours are not allowed for ' + days[i] + '.');
+            current.setAbortAction(true);
+            return;
+        }
+    }
+
+    // 2. For project work: validate EWT and consistency
+    var reportType = current.getValue('report_type');
+    if (reportType == 'work') {
+        var ewtId = current.getValue('employee_work_time');
+        if (!ewtId) {
+            gs.addErrorMessage('Employee Work Time is required for project work time cards.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        // Load the EWT record
+        var ewt = new GlideRecord('x_2316178_contin_0_ewt');
+        if (!ewt.get(ewtId)) {
+            gs.addErrorMessage('Referenced Employee Work Time record not found.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        // Validate user matches EWT.employee
+        var userId = current.getValue('user');
+        var ewtEmployee = ewt.getValue('employee');
+        if (userId != ewtEmployee) {
+            gs.addErrorMessage('User must match the Employee Work Time employee.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        // Validate EWT's resource_plan's project_task matches the time card's task
+        var taskId = current.getValue('task');
+        if (taskId) {
+            var rpId = ewt.getValue('resource_plan');
+            if (rpId) {
+                var rp = new GlideRecord('x_2316178_contin_0_res_plan');
+                if (rp.get(rpId)) {
+                    var rpProjectTask = rp.getValue('project_task');
+                    if (rpProjectTask != taskId) {
+                        gs.addErrorMessage('Task must match the Employee Work Time Resource Plan project task.');
+                        current.setAbortAction(true);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+})(current);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-23 10:01:39</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>97b0bf10a75d409e945b2be7ab4d55b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Validate Time Card</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_update_name>sys_script_97b0bf10a75d409e945b2be7ab4d55b2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-23 10:01:39</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=97b0bf10a75d409e945b2be7ab4d55b2"/>
+</record_update>

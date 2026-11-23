@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2316178_contin_0.CapacityEngine</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Deterministic capacity arithmetic: per-date capacity query, hour placement, and revalidation. No AI, no SPM.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>CapacityEngine</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var CapacityEngine = Class.create();
+CapacityEngine.prototype = {
+    initialize: function() {},
+
+    // ===== INTERNAL HELPERS =====
+    
+    _getEmployeeProfile: function(userId) {
+        var gr = new GlideRecord('x_2316178_contin_0_emp_profile');
+        gr.addQuery('employee', userId);
+        gr.query();
+        if (gr.next()) {
+            return {
+                sys_id: gr.getUniqueValue(),
+                available: gr.getValue('available') == '1' || gr.getValue('available') == 'true',
+                standard_daily_hours: parseInt(gr.getValue('standard_daily_hours')) || 8,
+                max_daily_hours: parseInt(gr.getValue('max_daily_hours')) || 12,
+                max_monthly_hours: gr.getValue('max_monthly_hours') ? parseInt(gr.getValue('max_monthly_hours')) : null,
+                work_sunday: gr.getValue('work_sunday') == '1',
+                work_monday: gr.getValue('work_monday') == '1',
+                work_tuesday: gr.getValue('work_tuesday') == '1',
+                work_wednesday: gr.getValue('work_wednesday') == '1',
+                work_thursday: gr.getValue('work_thursday') == '1',
+                work_friday: gr.getValue('work_friday') == '1',
+                work_saturday: gr.getValue('work_saturday') == '1'
+            };
+        }
+        return null;
+    },
+
+    _isWorkingDay: function(profile, dateStr) {
+        if (!profile || !profile.available) return false;
+        var gdt = new GlideDateTime(dateStr + ' 00:00:00');
+        var dow = gdt.getDayOfWeekLocalTime();
+        // 1=Mon,2=Tue,3=Wed,4=Thu,5=Fri,6=Sat,7=Sun
+        switch (dow) {
+            case 1: return profile.work_monday;
+            case 2: return profile.work_tuesday;
+            case 3: return profile.work_wednesday;
+            case 4: return profile.work_thursday;
+            case 5: return profile.work_friday;
+            case 6: return profile.work_saturday;
+            case 7: return profile.work_sunday;
+            default: return false;
+        }
+    },
+
+    _getDayFieldForDate: function(dateStr) {
+        var gdt = new GlideDateTime(dateStr + ' 00:00:00');
+        var dow = gdt.getDayOfWeekLocalTime();
+        var map = {1:'monday',2:'tuesday',3:'wednesday',4:'thursday',5:'friday',6:'saturday',7:'sunday'};
+        return map[dow];
+    },
+
+    _getWeekStart: function(dateStr) {
+        var gdt = new GlideDateTime(dateStr + ' 00:00:00');
+        var dow = gdt.getDayOfWeekLocalTime();
+        var sub = dow % 7; // 7(Sun)->0, 1(Mon)->1 ... 6(Sat)->6
+        if (sub > 0) gdt.addDaysLocalTime(-sub);
+        return gdt.getDate().getByFormat('yyyy-MM-dd');
+    },
+
+    // Sum hours across all report_type=work TCs for a user on a specific date
+    _getPlannedHoursForDate: function(userId, dateStr) {
+        var weekStart = this._getWeekStart(dateStr);
+        var dayField = this._getDayFieldForDate(dateStr);
+        var total = 0;
+        var tc = new GlideRecord('x_2316178_contin_0_time_card');
+        tc.addQuery('user', userId);
+        tc.addQuery('report_type', 'work');
+        tc.addQuery('week_start', weekStart);
+        tc.query();
+        while (tc.next()) {
+            total += parseFloat(tc.getValue(dayField) || '0');
+        }
+        return total;
+    },
+
+    // Check if date is blocked by freeze or absence TC
+    _isDateBlocked: function(userId, dateStr) {
+        var weekStart = this._getWeekStart(dateStr);
+        var tc = new GlideRecord('x_2316178_contin_0_time_card');
+        tc.addQuery('user', userId);
+        tc.addQuery('report_type', 'IN', 'freeze,absence');
+        tc.addQuery('week_start', weekStart);
+        tc.setLimit(1);
+        tc.query();
+        return tc.hasNext();
+    },
+
+    // Calculate total planned work-hours for a user in a specific calendar month
+    _getMonthlyPlannedHours: function(userId, year, month) {
+        var mm = (month < 10 ? '0' + month : '' + month);
+        var firstOfMonth = year + '-' + mm + '-01';
+
+        // Last day of month
+        var gdtEnd = new GlideDateTime(firstOfMonth + ' 00:00:00');
+        gdtEnd.addMonthsLocalTime(1);
+        gdtEnd.addDaysLocalTime(-1);
+        var lastOfMonth = gdtEnd.getDate().getByFormat('yyyy-MM-dd');
+
+        // Sunday range that could overlap with this month
+        var firstSunday = this._getWeekStart(firstOfMonth);
+        var lastSunday = this._getWeekStart(lastOfMonth);
+
+        var total = 0;
+        var tc = new GlideRecord('x_2316178_contin_0_time_card');
+        tc.addQuery('user', userId);
+        tc.addQuery('report_type', 'work');
+        tc.addQuery('week_start', '>=', firstSunday);
+        tc.addQuery('week_start', '<=', lastSunday);
+        tc.query();
+
+        var dayNames = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+        while (tc.next()) {
+            var ws = tc.getValue('week_start');
+            for (var d = 0; d < 7; d++) {
+                var dayGdt = new GlideDateTime(ws + ' 00:00:00');
+                dayGdt.addDaysLocalTime(d);
+                var dayStr = dayGdt.getDate().getByFormat('yyyy-MM-dd');
+                if (dayStr >= firstOfMonth && dayStr <= lastOfMonth) {
+                    total += parseFloat(tc.getValue(dayNames[d]) || '0');
+                }
+            }
+        }
+        return total;
+    },
+
+    // ===== PUBLIC API =====
+
+    /**
+     * Per-date capacity query.
+     * Returns: {eligible, rejectReasons[], regularHoursAvailable, absoluteHoursAvailable,
+     *           monthRemainingHours, currentPlannedHours, isWorkingDay, isBlocked, date}
+     */
+    getDateCapacity: function(userId, dateStr) {
+        var r = {
+            eligible: true,
+            rejectReasons: [],
+            regularHoursAvailable: 0,
+            absoluteHoursAvailable: 0,
+            monthRemainingHours: 0,
+            currentPlannedHours: 0,
+            isWorkingDay: false,
+            isBlocked: false,
+            date: dateStr
+        };
+
+        var profile = this._getEmployeeProfile(userId);
+        if (!profile) {
+            r.eligible = false;
+            r.rejectReasons.push('No Employee Profile found');
+            return r;
+        }
+        if (!profile.available) {
+            r.eligible = false;
+            r.rejectReasons.push('Employee is not available');
+            return r;
+        }
+        if (!profile.max_monthly_hours || profile.max_monthly_hours <= 0) {
+            r.eligible = false;
+            r.rejectReasons.push('Employee max_monthly_hours is not configured');
+            return r;
+        }
+
+        r.isWorkingDay = this._isWorkingDay(profile, dateStr);
+        if (!r.isWorkingDay) {
+            r.eligible = false;
+            r.rejectReasons.push('Not a working day for this employee');
+            return r;
+        }
+
+        r.isBlocked = this._isDateBlocked(userId, dateStr);
+        if (r.isBlocked) {
+            r.eligible = false;
+            r.rejectReasons.push('Date is blocked by freeze or absence');
+            return r;
+        }
+
+        r.currentPlannedHours = this._getPlannedHoursForDate(userId, dateStr);
+
+        var parts = dateStr.split('-');
+        var year = parseInt(parts[0]);
+        var month = parseInt(parts[1]);
+        var monthlyTotal = this._getMonthlyPlannedHours(userId, year, month);
+        r.monthRemainingHours = profile.max_monthly_hours - monthlyTotal;
+
+        if (r.monthRemainingHours <= 0) {
+            r.eligible = false;
+            r.rejectReasons.push('Monthly hour cap reached (' + profile.max_monthly_hours + 'h)');
+            return r;
+        }
+
+        var stdDaily = profile.standard_daily_hours;
+        var maxDaily = profile.max_daily_hours;
+
+        var regAvail = Math.max(0, stdDaily - r.currentPlannedHours);
+        var absAvail = Math.max(0, maxDaily - r.currentPlannedHours);
+
+        // Cap by monthly remaining
+        regAvail = Math.min(regAvail, r.monthRemainingHours);
+        absAvail = Math.min(absAvail, r.monthRemainingHours);
+
+        r.regularHoursAvailable = regAvail;
+        r.absoluteHoursAvailable = absAvail;
+
+        if (r.absoluteHoursAvailable <= 0) {
+            r.eligible = false;
+            r.rejectReasons.push('No available hours for this date (daily limit reached)');
+        }
+
+        return r;
+    },
+
+    /**
+     * Place hours optimally within a date range.
+     * Algorithm: least-loaded eligible days first under normal capacity (<=std);
+     *            use std–max only if necessary; never >max or over monthly cap.
+     *
+     * Returns: {success, rejectReason, placements[{date,hours}], remainingHours}
+     */
+    placeHours: function(userId, startDate, endDate, totalHours) {
+        var result = {
+            success: false,
+            rejectReason: '',
+            placements: [],
+            remainingHours: totalHours
+        };
+
+        if (totalHours <= 0) {
+            result.success = true;
+            result.remainingHours = 0;
+            return result;
+        }
+
+        var profile = this._getEmployeeProfile(userId);
+        if (!profile) {
+            result.rejectReason = 'No Employee Profile found';
+            return result;
+        }
+        if (!profile.available) {
+            result.rejectReason = 'Employee is not available';
+            return result;
+        }
+        if (!profile.max_monthly_hours || profile.max_monthly_hours <= 0) {
+            result.rejectReason = 'Employee max_monthly_hours is not configured';
+            return result;
+        }
+
+        var stdDaily = profile.standard_daily_hours;
+        var maxDaily = profile.max_daily_hours;
+
+        // Build list of eligible dates with current load
+        var eligibleDates = [];
+        var cur = new GlideDateTime(startDate + ' 00:00:00');
+        var end = new GlideDateTime(endDate + ' 00:00:00');
+
+        while (cur.compareTo(end) <= 0) {
+            var ds = cur.getDate().getByFormat('yyyy-MM-dd');
+            if (this._isWorkingDay(profile, ds) && !this._isDateBlocked(userId, ds)) {
+                var currentLoad = this._getPlannedHoursForDate(userId, ds);
+                if (currentLoad < maxDaily) {
+                    eligibleDates.push({ date: ds, currentLoad: currentLoad });
+                }
+            }
+            cur.addDaysLocalTime(1);
+        }
+
+        if (eligibleDates.length === 0) {
+            result.rejectReason = 'No eligible dates with available capacity in the specified range';
+            return result;
+        }
+
+        // Track monthly caps: { 'yyyy-MM': remainingHours }
+        var monthCaps = {};
+        var self = this;
+        var getMonthKey = function(ds) { return ds.substring(0, 7); };
+        var getMonthRemaining = function(mk) {
+            if (typeof monthCaps[mk] === 'undefined') {
+                var parts = mk.split('-');
+                var used = self._getMonthlyPlannedHours(userId, parseInt(parts[0]), parseInt(parts[1]));
+                monthCaps[mk] = profile.max_monthly_hours - used;
+            }
+            return monthCaps[mk];
+        };
+
+        var placements = {}; // { date: hoursPlaced }
+        var remaining = totalHours;
+
+        // --- PASS 1: Normal capacity (up to stdDaily per date) ---
+        // Sort by current load ascending (least-loaded first)
+        eligibleDates.sort(function(a, b) { return a.currentLoad - b.currentLoad; });
+
+        for (var i = 0; i < eligibleDates.length && remaining > 0; i++) {
+            var d = eligibleDates[i];
+            var mk = getMonthKey(d.date);
+            var monthRem = getMonthRemaining(mk);
+            if (monthRem <= 0) continue;
+
+            var regAvail = Math.max(0, stdDaily - d.currentLoad);
+            if (regAvail <= 0) continue;
+
+            var toPlace = Math.min(remaining, regAvail, monthRem);
+            if (toPlace > 0) {
+                placements[d.date] = (placements[d.date] || 0) + toPlace;
+                remaining -= toPlace;
+                monthCaps[mk] -= toPlace;
+            }
+        }
+
+        // --- PASS 2: Overtime capacity (stdDaily to maxDaily) ---
+        if (remaining > 0) {
+            // Re-sort by total load (current + placed), least-loaded first
+            eligibleDates.sort(function(a, b) {
+                var la = a.currentLoad + (placements[a.date] || 0);
+                var lb = b.currentLoad + (placements[b.date] || 0);
+                return la - lb;
+            });
+
+            for (var j = 0; j < eligibleDates.length && remaining > 0; j++) {
+                var d2 = eligibleDates[j];
+                var mk2 = getMonthKey(d2.date);
+                var monthRem2 = getMonthRemaining(mk2);
+                if (monthRem2 <= 0) continue;
+
+                var totalLoaded = d2.currentLoad + (placements[d2.date] || 0);
+                var absAvail = Math.max(0, maxDaily - totalLoaded);
+                if (absAvail <= 0) continue;
+
+                var toPlace2 = Math.min(remaining, absAvail, monthRem2);
+                if (toPlace2 > 0) {
+                    placements[d2.date] = (placements[d2.date] || 0) + toPlace2;
+                    remaining -= toPlace2;
+                    monthCaps[mk2] -= toPlace2;
+                }
+            }
+        }
+
+        // Build output
+        var placementList = [];
+        for (var date in placements) {
+            if (placements.hasOwnProperty(date)) {
+                placementList.push({ date: date, hours: placements[date] });
+            }
+        }
+        // Sort by date for readability
+        placementList.sort(function(a, b) { return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
+
+        result.placements = placementList;
+        result.remainingHours = remaining;
+        result.success = (remaining === 0);
+        if (!result.success && remaining > 0) {
+            result.rejectReason = 'Insufficient capacity: ' + remaining + ' hours could not be placed';
+        }
+
+        return result;
+    },
+
+    /**
+     * Revalidation check before committing placements.
+     * Re-checks capacity for each proposed placement.
+     */
+    revalidatePlacements: function(userId, placements) {
+        var result = { valid: true, issues: [] };
+        for (var i = 0; i < placements.length; i++) {
+            var p = placements[i];
+            var cap = this.getDateCapacity(userId, p.date);
+            if (!cap.eligible) {
+                result.valid = false;
+                result.issues.push({ date: p.date, reason: cap.rejectReasons.join('; ') });
+            } else if (p.hours > cap.absoluteHoursAvailable) {
+                result.valid = false;
+                result.issues.push({ date: p.date, reason: 'Only ' + cap.absoluteHoursAvailable + 'h available but ' + p.hours + 'h requested' });
+            }
+        }
+        return result;
+    },
+
+    type: 'CapacityEngine'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-23 10:20:48</sys_created_on>
+        <sys_id>e92fdcdb73f247e6a694715ac0119003</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CapacityEngine</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_update_name>sys_script_include_e92fdcdb73f247e6a694715ac0119003</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-23 10:20:48</sys_updated_on>
+    </sys_script_include>
+</record_update>

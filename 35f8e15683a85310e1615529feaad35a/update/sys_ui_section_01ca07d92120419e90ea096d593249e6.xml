@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Replacement Selection" section_id="01ca07d92120419e90ea096d593249e6" sys_domain="global" table="x_2316178_contin_0_repl_sel" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:24</sys_created_on>
+            <sys_id>6abfce46c6bb44b9abf9869845587211</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Replacement Selection" display_value="Replacement Selection" name="x_2316178_contin_0_repl_sel" sys_domain="global" view="Default view">01ca07d92120419e90ea096d593249e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:24</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>continuity_item</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:24</sys_created_on>
+            <sys_id>bc613d900c95450d880d310b2db387fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Replacement Selection" display_value="Replacement Selection" name="x_2316178_contin_0_repl_sel" sys_domain="global" view="Default view">01ca07d92120419e90ea096d593249e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:24</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>replacement_user</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:24</sys_created_on>
+            <sys_id>bca4fe897dc740e89bd37b907db9f609</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Replacement Selection" display_value="Replacement Selection" name="x_2316178_contin_0_repl_sel" sys_domain="global" view="Default view">01ca07d92120419e90ea096d593249e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:24</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>planned_hours</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:24</sys_created_on>
+            <sys_id>fc09d58c261f41d492bb90b46dd64bc4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Replacement Selection" display_value="Replacement Selection" name="x_2316178_contin_0_repl_sel" sys_domain="global" view="Default view">01ca07d92120419e90ea096d593249e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:24</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>selection_order</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:24</sys_created_on>
+            <sys_id>4b21f0dff9eb47e1995851e04c181435</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Replacement Selection" display_value="Replacement Selection" name="x_2316178_contin_0_repl_sel" sys_domain="global" view="Default view">01ca07d92120419e90ea096d593249e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:24</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:24</sys_created_on>
+            <sys_id>a53888d75c774667b2d5f6222c9d1dcd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Replacement Selection" display_value="Replacement Selection" name="x_2316178_contin_0_repl_sel" sys_domain="global" view="Default view">01ca07d92120419e90ea096d593249e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:24</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>selected_by</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:24</sys_created_on>
+            <sys_id>7cc2550bbb204827a180fbaa7e441b8a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Replacement Selection" display_value="Replacement Selection" name="x_2316178_contin_0_repl_sel" sys_domain="global" view="Default view">01ca07d92120419e90ea096d593249e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:24</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>status</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:24</sys_created_on>
+            <sys_id>a755d7e0e1834a31ad19665d35f4f36a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Replacement Selection" display_value="Replacement Selection" name="x_2316178_contin_0_repl_sel" sys_domain="global" view="Default view">01ca07d92120419e90ea096d593249e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:24</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>execution_status</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:24</sys_created_on>
+            <sys_id>8002061dcb9b4bc0a25c6861fbdc261f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Replacement Selection" display_value="Replacement Selection" name="x_2316178_contin_0_repl_sel" sys_domain="global" view="Default view">01ca07d92120419e90ea096d593249e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:24</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>reason</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:24</sys_created_on>
+            <sys_id>7ae9c47604464e9e951193e6f8e24e1f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Replacement Selection" display_value="Replacement Selection" name="x_2316178_contin_0_repl_sel" sys_domain="global" view="Default view">01ca07d92120419e90ea096d593249e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:24</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:24</sys_created_on>
+            <sys_id>c571faf1a3044912a8580a34634bf0dd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Replacement Selection" display_value="Replacement Selection" name="x_2316178_contin_0_repl_sel" sys_domain="global" view="Default view">01ca07d92120419e90ea096d593249e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:24</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Replacement Selection</caption>
+            <header>false</header>
+            <name>x_2316178_contin_0_repl_sel</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 10:44:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>01ca07d92120419e90ea096d593249e6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_2316178_contin_0_repl_sel</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+            <sys_update_name>sys_ui_section_01ca07d92120419e90ea096d593249e6</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 10:44:31</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

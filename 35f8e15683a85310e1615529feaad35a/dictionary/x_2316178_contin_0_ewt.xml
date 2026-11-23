@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="5610e18be3644d859002b79804a49fb3" label="Employee Work Time" name="x_2316178_contin_0_ewt" type="collection">
+        <element label="Is Replacement" name="is_replacement" type="boolean"/>
+        <element default="0" label="Planned Hours" name="planned_hours" type="decimal"/>
+        <element label="Resource Plan" mandatory="true" name="resource_plan" reference="x_2316178_contin_0_res_plan" type="reference"/>
+        <element default="0" label="Actual Hours" name="actual_hours" type="decimal"/>
+        <element attributes="ref_qual_elements=resource_plan,is_replacement" display="true" label="Employee" name="employee" reference="sys_user" reference_qual="javascript:new x_2316178_contin_0.EWTEmployeeQualifier().getQualifier(current)" type="reference" use_reference_qualifier="advanced"/>
+        <index name="index">
+            <element name="employee"/>
+        </index>
+        <index name="index2">
+            <element name="resource_plan"/>
+        </index>
+    </element>
+</database>

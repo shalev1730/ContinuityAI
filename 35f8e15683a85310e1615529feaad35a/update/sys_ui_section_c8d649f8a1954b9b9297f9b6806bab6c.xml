@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Daily Hours" section_id="c8d649f8a1954b9b9297f9b6806bab6c" sys_domain="global" table="x_2316178_contin_0_time_card" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>f00c360730a74c3a92e5f5f8dc8c0017</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Daily Hours" display_value="Daily Hours" name="x_2316178_contin_0_time_card" sys_domain="global" view="Default view">c8d649f8a1954b9b9297f9b6806bab6c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sunday</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>e48b39b2c05e4d67b11b105a3038091c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Daily Hours" display_value="Daily Hours" name="x_2316178_contin_0_time_card" sys_domain="global" view="Default view">c8d649f8a1954b9b9297f9b6806bab6c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>monday</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>158e6d4161944974998b3e66270f4cd0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Daily Hours" display_value="Daily Hours" name="x_2316178_contin_0_time_card" sys_domain="global" view="Default view">c8d649f8a1954b9b9297f9b6806bab6c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>tuesday</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>300554f4186640919b2e30b506b4d709</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Daily Hours" display_value="Daily Hours" name="x_2316178_contin_0_time_card" sys_domain="global" view="Default view">c8d649f8a1954b9b9297f9b6806bab6c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>wednesday</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>ce6a8b5f0f514f1eacb52fdc69a7c87f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Daily Hours" display_value="Daily Hours" name="x_2316178_contin_0_time_card" sys_domain="global" view="Default view">c8d649f8a1954b9b9297f9b6806bab6c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>0b5297345d1f428ebcec3eb29dbe81e9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Daily Hours" display_value="Daily Hours" name="x_2316178_contin_0_time_card" sys_domain="global" view="Default view">c8d649f8a1954b9b9297f9b6806bab6c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>thursday</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>37089cb1b5de4dd190294a0f1a9346a3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Daily Hours" display_value="Daily Hours" name="x_2316178_contin_0_time_card" sys_domain="global" view="Default view">c8d649f8a1954b9b9297f9b6806bab6c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>friday</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>5b532c7c908c44599b258be813aeb64a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Daily Hours" display_value="Daily Hours" name="x_2316178_contin_0_time_card" sys_domain="global" view="Default view">c8d649f8a1954b9b9297f9b6806bab6c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>saturday</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>7a7ea0ca262f48438ad0878bc8d99ac5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Daily Hours" display_value="Daily Hours" name="x_2316178_contin_0_time_card" sys_domain="global" view="Default view">c8d649f8a1954b9b9297f9b6806bab6c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 11:30:26</sys_created_on>
+            <sys_id>7155ff33e7a04f1aaee5ddb66d8baf25</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Daily Hours" display_value="Daily Hours" name="x_2316178_contin_0_time_card" sys_domain="global" view="Default view">c8d649f8a1954b9b9297f9b6806bab6c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 11:30:26</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Daily Hours</caption>
+            <header>false</header>
+            <name>x_2316178_contin_0_time_card</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-11-23 10:01:42</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c8d649f8a1954b9b9297f9b6806bab6c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_2316178_contin_0_time_card</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+            <sys_update_name>sys_ui_section_c8d649f8a1954b9b9297f9b6806bab6c</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-11-23 10:01:42</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

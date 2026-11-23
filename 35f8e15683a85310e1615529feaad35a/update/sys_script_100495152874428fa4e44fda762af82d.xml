@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_2316178_contin_0_ewt</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Validate EWT Group Membership</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function validateEWTGroupMembership(current) {
+    // Skip if is_replacement is true - replacement bypasses ONLY group restriction
+    var isReplacement = current.getValue('is_replacement');
+    if (isReplacement == 'true' || isReplacement == '1' || isReplacement === true) {
+        return;
+    }
+
+    var employeeId = current.getValue('employee');
+    if (!employeeId) return; // No employee set, nothing to validate
+
+    var rpId = current.getValue('resource_plan');
+    if (!rpId) return; // No RP, can't validate group
+
+    // Get the RP's assignment_group
+    var rp = new GlideRecord('x_2316178_contin_0_res_plan');
+    if (!rp.get(rpId)) return;
+
+    var groupId = rp.getValue('assignment_group');
+    if (!groupId) return; // No group on RP, allow
+
+    // Check if employee is a member of the group
+    var gm = new GlideRecord('sys_user_grmember');
+    gm.addQuery('group', groupId);
+    gm.addQuery('user', employeeId);
+    gm.query();
+    if (!gm.next()) {
+        gs.addErrorMessage('Employee is not a member of the Resource Plan assignment group. Use "Is Replacement" to allow cross-group assignment.');
+        current.setAbortAction(true);
+    }
+})(current);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-23 09:52:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>100495152874428fa4e44fda762af82d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Validate EWT Group Membership</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_update_name>sys_script_100495152874428fa4e44fda762af82d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-23 09:52:38</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=100495152874428fa4e44fda762af82d"/>
+</record_update>
