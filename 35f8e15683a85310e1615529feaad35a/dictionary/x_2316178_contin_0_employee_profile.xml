@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="bf0e6b7fbba04615bd72adbe7d504233" label="Employee Profile" name="x_2316178_contin_0_employee_profile" type="collection">
+        <element label="Professional Role" max_length="100" name="professional_role" type="string"/>
+        <element label="Work Tuesday" name="work_tuesday" type="boolean"/>
+        <element label="Work Monday" name="work_monday" type="boolean"/>
+        <element label="Department" name="department" reference="cmn_department" type="reference"/>
+        <element attributes="scale=2" default="8" label="Max Daily Hours" name="max_daily_hours" type="decimal"/>
+        <element label="Work Wednesday" name="work_wednesday" type="boolean"/>
+        <element default="true" label="Available" name="available" type="boolean"/>
+        <element label="Work Thursday" name="work_thursday" type="boolean"/>
+        <element label="Team" name="team" reference="sys_user_group" type="reference"/>
+        <element display="true" label="Employee" mandatory="true" name="employee" reference="sys_user" type="reference"/>
+        <element label="Work Friday" name="work_friday" type="boolean"/>
+        <element label="Work Saturday" name="work_saturday" type="boolean"/>
+        <element label="Skills" name="skills" reference="x_2316178_contin_0_skill" type="glide_list"/>
+        <element label="Work Sunday" name="work_sunday" type="boolean"/>
+        <index name="index">
+            <element name="department"/>
+        </index>
+        <index name="index2" unique="true">
+            <element name="employee"/>
+        </index>
+        <index name="index3">
+            <element name="team"/>
+        </index>
+    </element>
+</database>

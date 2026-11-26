@@ -42,7 +42,7 @@
         <update_guid_history>5f05f5daf5e853102b2deb61dea34b42:-735864541</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="x_2316178_contin_0_employee_profile.x_2316178_contin_0.continuity_manager">14f76cd783241310e1615529feaad337</sys_audit_delete>
+        <sys_audit_delete display_value="">14f76cd783241310e1615529feaad337</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-11-19 11:09:36</sys_created_on>

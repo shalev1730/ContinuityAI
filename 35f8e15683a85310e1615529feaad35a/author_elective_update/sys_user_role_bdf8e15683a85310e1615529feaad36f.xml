@@ -50,7 +50,7 @@
         <update_guid_history>b5f8e15624a85310484a963893e50b7a:-1449395025</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="x_2316178_contin_0.continuity_manager">c838a85b83241310e1615529feaad3dd</sys_audit_delete>
+        <sys_audit_delete display_value="">c838a85b83241310e1615529feaad3dd</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-11-19 11:10:41</sys_created_on>

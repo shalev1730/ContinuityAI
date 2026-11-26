@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_2316178_contin_0_time_card</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Rollup TC to EWT and RP</name>
+        <order>200</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[
+(function executeRule(current, previous) {
+
+    function recalcEWT(ewtId) {
+        if (!ewtId) return;
+        var total = 0;
+        var ga = new GlideAggregate('x_2316178_contin_0_time_card');
+        ga.addQuery('employee_work_time', ewtId);
+        ga.addQuery('report_type', 'work');
+        ga.addAggregate('SUM', 'sunday');
+        ga.addAggregate('SUM', 'monday');
+        ga.addAggregate('SUM', 'tuesday');
+        ga.addAggregate('SUM', 'wednesday');
+        ga.addAggregate('SUM', 'thursday');
+        ga.addAggregate('SUM', 'friday');
+        ga.addAggregate('SUM', 'saturday');
+        ga.query();
+        if (ga.next()) {
+            var days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+            for (var i = 0; i < days.length; i++) {
+                total += parseFloat(ga.getAggregate('SUM', days[i]) || 0);
+            }
+        }
+        var ewt = new GlideRecord('x_2316178_contin_0_employee_work_time');
+        if (ewt.get(ewtId)) {
+            ewt.setValue('planned_hours', total);
+            ewt.setWorkflow(false);
+            ewt.autoSysFields(false);
+            ewt.update();
+        }
+        return ewtId;
+    }
+
+    function recalcRP(rpId) {
+        if (!rpId) return;
+        var ph = 0, ah = 0;
+        var ga = new GlideAggregate('x_2316178_contin_0_employee_work_time');
+        ga.addQuery('resource_plan', rpId);
+        ga.addAggregate('SUM', 'planned_hours');
+        ga.addAggregate('SUM', 'actual_hours');
+        ga.query();
+        if (ga.next()) {
+            ph = parseFloat(ga.getAggregate('SUM', 'planned_hours') || 0);
+            ah = parseFloat(ga.getAggregate('SUM', 'actual_hours') || 0);
+        }
+        var rp = new GlideRecord('x_2316178_contin_0_resource_plan');
+        if (rp.get(rpId)) {
+            rp.setValue('planned_hours', ph);
+            rp.setValue('actual_hours', ah);
+            rp.setWorkflow(false);
+            rp.autoSysFields(false);
+            rp.update();
+        }
+    }
+
+    // Current parent EWT
+    var ewtId = current.getValue('employee_work_time');
+    recalcEWT(ewtId);
+
+    // Cascade to RP for current EWT
+    if (ewtId) {
+        var ewtGr = new GlideRecord('x_2316178_contin_0_employee_work_time');
+        if (ewtGr.get(ewtId)) {
+            recalcRP(ewtGr.getValue('resource_plan'));
+        }
+    }
+
+    // If EWT reference changed (re-assignment), recalculate old parent chain
+    var oldEwtId = (previous) ? previous.getValue('employee_work_time') : '';
+    if (oldEwtId && oldEwtId != ewtId) {
+        recalcEWT(oldEwtId);
+        var oldEwt = new GlideRecord('x_2316178_contin_0_employee_work_time');
+        if (oldEwt.get(oldEwtId)) {
+            recalcRP(oldEwt.getValue('resource_plan'));
+        }
+    }
+
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-26 13:41:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>78a3e51042364d1abb312a2507d3c792</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Rollup TC to EWT and RP</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_update_name>sys_script_78a3e51042364d1abb312a2507d3c792</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-26 13:41:33</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=78a3e51042364d1abb312a2507d3c792"/>
+</record_update>

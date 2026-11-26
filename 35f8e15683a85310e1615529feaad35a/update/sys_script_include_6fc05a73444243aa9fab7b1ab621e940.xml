@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2316178_contin_0.ContinuityCapacityUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Daily capacity, available hours, and team utilization calculations for Continuity AI</description>
+        <mobile_callable>false</mobile_callable>
+        <name>ContinuityCapacityUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[/**
+ * ContinuityCapacityUtils
+ *
+ * Server-side capacity calculation engine.
+ * Called by Workspace data brokers and agent Script Includes.
+ *
+ * Key formulas:
+ *   dailyCapacity = max(0, min(max_daily_hours, 8) - freezeHours - absenceHours)
+ *   availableHours = max(0, dailyCapacity - workHours)
+ *   teamUtilization = workHours / capacityHours × 100  (dash when denominator = 0)
+ */
+var ContinuityCapacityUtils = Class.create();
+ContinuityCapacityUtils.prototype = {
+    initialize: function() {},
+
+    /**
+     * Map a date string (yyyy-MM-dd) to its day-of-week field name
+     * and the week_start (Sunday) for Time Card lookup.
+     */
+    _getWeekInfo: function(dateStr) {
+        var gdt = new GlideDateTime(dateStr + ' 12:00:00');
+        var dow = parseInt(gdt.getDayOfWeekLocalTime()); // 1=Sun … 7=Sat
+        var dayMap = {1:'sunday', 2:'monday', 3:'tuesday', 4:'wednesday',
+                      5:'thursday', 6:'friday', 7:'saturday'};
+
+        // Subtract (dow-1) days to reach Sunday
+        var dur = new GlideDuration(0);
+        dur.setNumericValue((dow - 1) * 86400 * 1000);
+        var sunday = new GlideDateTime(gdt);
+        sunday.subtract(dur);
+
+        return {
+            dayField: dayMap[dow],
+            weekStart: sunday.getDate().getValue()  // yyyy-MM-dd
+        };
+    },
+
+    /**
+     * Sum hours from Time Cards for a user on a specific date,
+     * filtered by one or more report_type values (comma-separated).
+     */
+    _getHoursForDate: function(userId, dateStr, reportTypes) {
+        var info = this._getWeekInfo(dateStr);
+        var total = 0;
+        var tc = new GlideRecord('x_2316178_contin_0_time_card');
+        tc.addQuery('user', userId);
+        tc.addQuery('week_start', info.weekStart);
+        tc.addQuery('report_type', 'IN', reportTypes);
+        tc.query();
+        while (tc.next()) {
+            total += parseFloat(tc.getValue(info.dayField) || 0);
+        }
+        return total;
+    },
+
+    /**
+     * Check whether a date is a working day for the given profile.
+     * @param {GlideRecord} profile - Employee Profile record (already queried)
+     * @param {string} dayField - e.g. 'sunday', 'monday'
+     */
+    _isWorkingDay: function(profile, dayField) {
+        var val = profile.getValue('work_' + dayField);
+        return val == '1' || val == 'true';
+    },
+
+    /**
+     * Employee daily capacity after freeze/absence deductions.
+     * Returns 0 when: not available, non-working day, or fully absent.
+     */
+    getEmployeeDailyCapacity: function(employeeSysId, dateStr) {
+        var ep = new GlideRecord('x_2316178_contin_0_employee_profile');
+        ep.addQuery('employee', employeeSysId);
+        ep.query();
+        if (!ep.next()) return 0;
+
+        // General availability flag
+        if (ep.getValue('available') != '1' && ep.getValue('available') != 'true') return 0;
+
+        // Working day check
+        var info = this._getWeekInfo(dateStr);
+        if (!this._isWorkingDay(ep, info.dayField)) return 0;
+
+        // Start with max_daily_hours, capped at 8
+        var maxHours = Math.min(parseFloat(ep.getValue('max_daily_hours') || 8), 8);
+
+        // Subtract freeze + absence hours for the date
+        var absenceHours = this._getHoursForDate(employeeSysId, dateStr, 'freeze,absence');
+
+        return Math.max(maxHours - absenceHours, 0);
+    },
+
+    /**
+     * Hours available for NEW work assignments on a date.
+     * = dailyCapacity − already-planned work hours (min 0).
+     */
+    getEmployeeAvailableHours: function(employeeSysId, dateStr) {
+        var capacity = this.getEmployeeDailyCapacity(employeeSysId, dateStr);
+        if (capacity <= 0) return 0;
+
+        var workHours = this._getHoursForDate(employeeSysId, dateStr, 'work');
+        return Math.max(capacity - workHours, 0);
+    },
+
+    /**
+     * Team load for a single date.
+     * @returns {object} {workHours, capacityHours, utilizationPct}
+     *   utilizationPct = -1 when denominator is 0 (display as dash).
+     *   Can exceed 100 when over-allocated.
+     */
+    getTeamDailyLoad: function(groupSysId, dateStr) {
+        var totalCapacity = 0;
+        var totalWorkHours = 0;
+
+        var ep = new GlideRecord('x_2316178_contin_0_employee_profile');
+        ep.addQuery('team', groupSysId);
+        ep.query();
+
+        while (ep.next()) {
+            var empId = ep.getValue('employee');
+            var cap = this.getEmployeeDailyCapacity(empId, dateStr);
+            totalCapacity += cap;
+
+            // Count work hours for all team members (not just those with capacity)
+            var work = this._getHoursForDate(empId, dateStr, 'work');
+            totalWorkHours += work;
+        }
+
+        var pct = (totalCapacity > 0)
+            ? (totalWorkHours / totalCapacity * 100)
+            : -1; // dash
+
+        return {
+            workHours: Math.round(totalWorkHours * 100) / 100,
+            capacityHours: Math.round(totalCapacity * 100) / 100,
+            utilizationPct: (pct >= 0) ? Math.round(pct * 10) / 10 : -1
+        };
+    },
+
+    /**
+     * Team monthly load — daily breakdown for a full month.
+     * @returns {Array} [{date, workHours, capacityHours, utilizationPct}, ...]
+     */
+    getTeamMonthlyLoad: function(groupSysId, year, month) {
+        var results = [];
+        var monthStr = (month < 10) ? '0' + month : '' + month;
+        var daysInMonth = [0,31,29,31,30,31,30,31,31,30,31,30,31];
+        var maxDay = daysInMonth[month] || 31;
+
+        for (var day = 1; day <= maxDay; day++) {
+            var dayStr = (day < 10) ? '0' + day : '' + day;
+            var dateStr = year + '-' + monthStr + '-' + dayStr;
+
+            // Validate the date is real (handles Feb 29 in non-leap years)
+            var testGd = new GlideDate();
+            testGd.setValue(dateStr);
+            if (!testGd.getValue()) break;
+
+            var load = this.getTeamDailyLoad(groupSysId, dateStr);
+            load.date = dateStr;
+            results.push(load);
+        }
+        return results;
+    },
+
+    type: 'ContinuityCapacityUtils'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-26 13:47:29</sys_created_on>
+        <sys_id>6fc05a73444243aa9fab7b1ab621e940</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ContinuityCapacityUtils</sys_name>
+        <sys_package display_value="Continuity AI" source="x_2316178_contin_0">35f8e15683a85310e1615529feaad35a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Continuity AI">35f8e15683a85310e1615529feaad35a</sys_scope>
+        <sys_update_name>sys_script_include_6fc05a73444243aa9fab7b1ab621e940</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-26 13:47:29</sys_updated_on>
+    </sys_script_include>
+</record_update>

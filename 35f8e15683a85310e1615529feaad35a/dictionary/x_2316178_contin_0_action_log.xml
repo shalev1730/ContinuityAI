@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="1da0795f03f4443a8117d4c145a2b9ba" label="Action Log" name="x_2316178_contin_0_action_log" type="collection">
+        <element label="Approved By" name="approved_by" reference="sys_user" type="reference"/>
+        <element label="Approved Selection Signature" max_length="256" name="approved_selection_signature" type="string"/>
+        <element label="Action Type" max_length="100" name="action_type" type="string"/>
+        <element label="Absence RITM" name="absence_ritm" reference="sc_req_item" type="reference"/>
+        <element label="Error" max_length="4000" name="error" type="string"/>
+        <element label="Target User" name="target_user" reference="sys_user" type="reference"/>
+        <element label="Before Snapshot" max_length="4000" name="before_snapshot" type="string"/>
+        <element display="true" label="Run ID" max_length="100" name="run_id" type="string"/>
+        <element label="Idempotency Key" max_length="200" name="idempotency_key" type="string"/>
+        <element label="Source Table" max_length="80" name="source_table" type="string"/>
+        <element label="Approved At" name="approved_at" type="glide_date_time"/>
+        <element label="Source Sys ID" max_length="32" name="source_sys_id" type="string"/>
+        <element label="Executed By" name="executed_by" reference="sys_user" type="reference"/>
+        <element label="After Snapshot" max_length="4000" name="after_snapshot" type="string"/>
+        <element label="Outcome" max_length="40" name="outcome" type="string"/>
+        <element label="Executed At" name="executed_at" type="glide_date_time"/>
+        <index name="index">
+            <element name="absence_ritm"/>
+        </index>
+        <index name="index2">
+            <element name="approved_by"/>
+        </index>
+        <index name="index3">
+            <element name="executed_by"/>
+        </index>
+        <index name="index4" unique="true">
+            <element name="idempotency_key"/>
+        </index>
+        <index name="index5">
+            <element name="target_user"/>
+        </index>
+    </element>
+</database>

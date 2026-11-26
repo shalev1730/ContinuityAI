@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="d9a9774aa444474a9e437194fa09d3a1" label="Time Card" name="x_2316178_contin_0_time_card" type="collection">
+        <element attributes="scale=2" default="0" label="Thursday" name="thursday" type="decimal"/>
+        <element attributes="scale=2" default="0" label="Friday" name="friday" type="decimal"/>
+        <element default="work" label="Report Type" name="report_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Absence" sequence="3" value="absence"/>
+                <element inactive_on_update="false" label="Freeze" sequence="2" value="freeze"/>
+                <element inactive_on_update="false" label="Work" sequence="1" value="work"/>
+            </choice>
+        </element>
+        <element label="Week Start" name="week_start" type="glide_date"/>
+        <element attributes="scale=2" default="0" label="Tuesday" name="tuesday" type="decimal"/>
+        <element label="Task" name="task" reference="task" type="reference"/>
+        <element attributes="scale=2" default="0" label="Wednesday" name="wednesday" type="decimal"/>
+        <element attributes="scale=2" default="0" label="Sunday" name="sunday" type="decimal"/>
+        <element attributes="scale=2" default="0" label="Saturday" name="saturday" type="decimal"/>
+        <element label="Employee Work Time" name="employee_work_time" reference="x_2316178_contin_0_employee_work_time" type="reference"/>
+        <element attributes="scale=2" default="0" label="Monday" name="monday" type="decimal"/>
+        <element display="true" label="User" name="user" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="employee_work_time"/>
+        </index>
+        <index name="index2">
+            <element name="task"/>
+        </index>
+        <index name="index3">
+            <element name="user"/>
+        </index>
+    </element>
+</database>
